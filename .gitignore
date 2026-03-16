@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment files
+.env
+.env*
+.env.local
+
+# Backend specific
+Backend/uploads/
+*.log
+*.tmp
+*.temp
+
+# Frontend (Next.js) specific
+frontend_basededonnee/.next/
+frontend_basededonnee/out/
+frontend_basededonnee/build/
+frontend_basededonnee/.vercel
+frontend_basededonnee/*.tsbuildinfo
+frontend_basededonnee/next-env.d.ts
+
+# OS files
+.DS_Store
+Thumbs.db
