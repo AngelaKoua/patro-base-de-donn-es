@@ -1,0 +1,45 @@
+### Affichage de liste
+GET http://localhost:4400/Utilisateurs HTTP/1.1
+content-type: application/json
+
+### Affichage un utilisateur
+GET http://localhost:4400/api/utilisateurs/3 HTTP/1.1
+content-type: application/json
+
+### Ajout un utilisateur
+POST http://localhost:4400/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "nom": "Koné",
+    "prenom": "Anna",
+    "telephone": "45435435",
+    "email": "anna@gmail.com",
+    "password": "anna@ghf",
+    "sexe": "Femme"
+}
+
+### Ajout un utilisateur
+POST http://localhost:4400/userlogin HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "kossi@gmail.com",
+    "password": "kossi@ghf"
+}
+
+### Modifier un utilisateur
+PUT http://localhost:4400/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Zongo",
+    "prenom": "Ali",
+    "age": 20,
+    "date_naissance":"2005-10-06",
+    "date_inscription":"2024-06-10"
+}
+
+### Supprimer un utilisateur
+DELETE http://localhost:4400/ HTTP/1.1
+content-type: application/json

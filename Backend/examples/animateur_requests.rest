@@ -1,0 +1,41 @@
+### Ajouter un nouvel animateur
+POST http://localhost:4400/api/animateurs
+Content-Type: application/json
+
+{
+    "annee": "2025",
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "fonction": "Animateur",
+    "date_naissance": "2000-01-01",
+    "sexe": "M",
+    "section": "Section A",
+    "religion": "Catholique"
+}
+
+### Obtenir la liste des animateurs
+GET http://localhost:4400/api/animateurs
+Content-Type: application/json
+
+### Obtenir un animateur spécifique
+GET http://localhost:4400/api/animateurs/1
+Content-Type: application/json
+
+### Mettre à jour un animateur
+PUT http://localhost:4400/api/animateurs/1
+Content-Type: application/json
+
+{
+    "annee": "2025",
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "fonction": "Animateur Principal",
+    "date_naissance": "2000-01-01",
+    "sexe": "M",
+    "section": "Section A",
+    "religion": "Catholique"
+}
+
+### Supprimer un animateur
+DELETE http://localhost:4400/api/animateurs/1
+Content-Type: application/json
