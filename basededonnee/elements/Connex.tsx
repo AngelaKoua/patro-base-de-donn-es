@@ -9,14 +9,6 @@ import { API_URL } from '@/lib/api';
 export default function ConnexionPage() {
     const router = useRouter();
 
-    // Liste des emails autorisés à se connecter
-    const allowedEmails = [
-        'kouaangela606@gmail.com',
-        'patrorsvbouake@gmail.com',
-        'dialloba@gmail.com'
-        // Ajoutez ici les emails autorisés
-    ];
-
     const initialValues = {
         email: '',
         mot_de_passe: '',
@@ -36,11 +28,7 @@ export default function ConnexionPage() {
     { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
 ) => {
     try {
-        if (!allowedEmails.includes(values.email)) {
-            alert('Adresse email non autorisée.');
-            return;
-        }
-
+        // Les comptes autorisés sont gérés dans la table utilisateurs de Supabase (vérifiés par /api/userlogin).
         const response = await axios.post(`${API_URL}/api/userlogin`,
             {
                 email: values.email.trim(),
