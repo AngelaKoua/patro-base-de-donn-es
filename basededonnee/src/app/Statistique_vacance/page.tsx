@@ -227,6 +227,11 @@ const router = useRouter();
     ],
   };
   const pieOptions = {
+    // Le camembert suit la taille de son conteneur (sinon Chart.js le garde carré et il déborde)
+    responsive: true,
+    maintainAspectRatio: false,
+    // Marge pour les pourcentages affichés à l'extérieur du camembert
+    layout: { padding: 24 },
     plugins: {
       datalabels: {
         color: '#0b0b0b',
@@ -239,9 +244,9 @@ const router = useRouter();
           return pct > 0 ? pct.toFixed(0) + '%' : '';
         },
         anchor: 'end' as const,
-        align: 'end' as const,
+        align: 'end' as const, clamp: true,
       },
-      legend: { position: 'top' as const },
+      legend: { position: 'top' as const, labels: { boxWidth: 12, padding: 10, font: { size: 11 } } },
       title: { display: false },
     },
   };
@@ -304,11 +309,11 @@ const router = useRouter();
             Répartition des classes - Primaire
           </h3>
           {pieLoading ? (
-            <div className="flex justify-center items-center h-60">
+            <div className="flex justify-center items-center h-72 sm:h-80">
               <div className="animate-spin rounded-full h-12 w-12 border-4 border-sky-200 border-t-sky-500"></div>
             </div>
           ) : (
-            <div className="h-60">
+            <div className="relative h-72 sm:h-80">
               <Pie data={dataPrimaire} options={pieOptions} plugins={[ChartDataLabels]} />
             </div>
           )}
@@ -321,11 +326,11 @@ const router = useRouter();
             Répartition des classes - Secondaire
           </h3>
           {pieLoading ? (
-            <div className="flex justify-center items-center h-60">
+            <div className="flex justify-center items-center h-72 sm:h-80">
               <div className="animate-spin rounded-full h-12 w-12 border-4 border-sky-200 border-t-sky-500"></div>
             </div>
           ) : (
-            <div className="h-60">
+            <div className="relative h-72 sm:h-80">
               <Pie data={dataSecondaire} options={pieOptions} plugins={[ChartDataLabels]} />
             </div>
           )}
@@ -338,12 +343,12 @@ const router = useRouter();
             Répartition par sexe
           </h3>
           {sexeLoading ? (
-            <div className="flex justify-center items-center h-60">
+            <div className="flex justify-center items-center h-72 sm:h-80">
               <div className="animate-spin rounded-full h-12 w-12 border-4 border-sky-200 border-t-sky-500"></div>
             </div>
           ) : (
             (dataSexe.datasets[0].data[0] > 0 || dataSexe.datasets[0].data[1] > 0) ? (
-              <div className="h-60">
+              <div className="relative h-72 sm:h-80">
                 <Pie data={dataSexe} options={pieOptions} plugins={[ChartDataLabels]} />
               </div>
             ) : (
