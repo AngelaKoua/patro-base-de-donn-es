@@ -230,7 +230,7 @@ const VacanceEnfantPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-sky-100">
-      <div className="p-8" style={{ background: '#fff' }}>
+      <div className="p-4 sm:p-6 lg:p-8" style={{ background: '#fff' }}>
       {fetchError && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
           <strong>Erreur :</strong> {fetchError}
@@ -248,14 +248,14 @@ const VacanceEnfantPage = () => {
         </button>
       </div>
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent mb-2">
+        <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent mb-2">
           Tableau de Bord
         </h1>
         <p className="text-xl text-sky-600 font-semibold">Patronnés vacances</p>
         <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
       </div>
 
-      <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row flex-wrap justify-between items-stretch sm:items-center gap-3 sm:gap-4 mb-8">
         <button
           onClick={() => setShowFilter(!showFilter)}
           className="bg-sky-500 hover:bg-sky-600 text-white px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 font-medium"
@@ -286,7 +286,7 @@ const VacanceEnfantPage = () => {
       </div>
 
       {showFilter && (
-        <div className="mb-8 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-sky-100">
+        <div className="mb-8 p-4 sm:p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-sky-100">
             <h3 className="text-xl font-bold text-sky-700 mb-6 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
@@ -437,7 +437,7 @@ const VacanceEnfantPage = () => {
       {showForm && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50 p-4">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
-              <div className="sticky top-0 bg-gradient-to-r from-sky-500 to-blue-600 p-6 rounded-t-2xl">
+              <div className="sticky top-0 bg-gradient-to-r from-sky-500 to-blue-600 p-4 sm:p-6 rounded-t-2xl">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -470,7 +470,7 @@ const VacanceEnfantPage = () => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="p-6 space-y-6">
+              <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-sky-700 mb-2">N° d'inscription</label>
@@ -643,10 +643,10 @@ const VacanceEnfantPage = () => {
           </div>
       )}
       {/* Export Excel Button */}
-      <div className="flex justify-end mb-4">
+      <div className="flex flex-col sm:flex-row sm:justify-end mb-4">
         <button
           onClick={handleExportExcel}
-          className="bg-green-600 text-white hover:bg-green-700 px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-medium flex items-center gap-2"
+          className="bg-green-600 text-white hover:bg-green-700 px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-medium flex items-center justify-center gap-2"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -661,23 +661,23 @@ const VacanceEnfantPage = () => {
     <table className="w-full">
       <thead>
         <tr className="bg-gradient-to-r from-sky-400 to-blue-400 text-white">
-          <th className="px-6 py-4 text-left font-bold">Année</th>
-          <th className="px-6 py-4 text-left font-bold">N° d'inscription</th>
-          <th className="px-6 py-4 text-left font-bold">Nom</th>
-          <th className="px-6 py-4 text-left font-bold">Prénom</th>
-          <th className="px-6 py-4 text-left font-bold">Naissance</th>
-          <th className="px-6 py-4 text-left font-bold">Section</th>
-          <th className="px-6 py-4 text-left font-bold">Sexe</th>
-          <th className="px-6 py-4 text-left font-bold">Classe</th>
-          <th className="px-6 py-4 text-left font-bold">Religion</th>
-          <th className="px-6 py-4 text-left font-bold">Actions</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Année</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">N° d'inscription</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Nom</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Prénom</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Naissance</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Section</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Sexe</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Classe</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Religion</th>
+          <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Actions</th>
         </tr>
       </thead>
       <tbody>
         {filteredStudents.length === 0 ? (
           <tr>
             <td colSpan={10} className="px-6 py-12 text-center text-gray-500 bg-sky-50/50">
-              <div className="flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-4 sticky left-6 max-w-[calc(100vw-6rem)] sm:static sm:max-w-none">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -691,17 +691,17 @@ const VacanceEnfantPage = () => {
         ) : (
           filteredStudents.map((student) => (
             <tr key={student.id} className="hover:bg-sky-50/50 transition-colors duration-200 border-b border-sky-100">
-              <td className="px-6 py-4 text-sky-700 font-medium">{student.annee}</td>
-              <td className="px-6 py-4 text-sky-700 font-medium">{student.numero_inscription}</td>
-              <td className="px-6 py-4 text-gray-800 font-semibold">{student.nom}</td>
-              <td className="px-6 py-4 text-gray-800">{student.prenom}</td>
-              <td className="px-6 py-4 text-gray-600">{student.naissance}</td>
-              <td className="px-6 py-4">
+              <td className="whitespace-nowrap px-6 py-4 text-sky-700 font-medium">{student.annee}</td>
+              <td className="whitespace-nowrap px-6 py-4 text-sky-700 font-medium">{student.numero_inscription}</td>
+              <td className="whitespace-nowrap px-6 py-4 text-gray-800 font-semibold">{student.nom}</td>
+              <td className="whitespace-nowrap px-6 py-4 text-gray-800">{student.prenom}</td>
+              <td className="whitespace-nowrap px-6 py-4 text-gray-600">{student.naissance}</td>
+              <td className="whitespace-nowrap px-6 py-4">
                 <span className="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-medium">
                   {student.section}
                 </span>
               </td>
-              <td className="px-6 py-4">
+              <td className="whitespace-nowrap px-6 py-4">
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                   student.sexe === 'M' 
                     ? 'bg-blue-100 text-blue-700' 
@@ -710,13 +710,13 @@ const VacanceEnfantPage = () => {
                   {student.sexe === 'M' ? 'Masculin' : 'Féminin'}
                 </span>
               </td>
-              <td className="px-6 py-4">
+              <td className="whitespace-nowrap px-6 py-4">
                 <span className="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-sm font-medium">
                   {student.classe}
                 </span>
               </td>
-              <td className="px-6 py-4 text-gray-600">{student.religion}</td>
-              <td className="px-6 py-4">
+              <td className="whitespace-nowrap px-6 py-4 text-gray-600">{student.religion}</td>
+              <td className="whitespace-nowrap px-6 py-4">
                 <div className="flex space-x-2">
                   <button 
                     onClick={() => handleEdit(student)}

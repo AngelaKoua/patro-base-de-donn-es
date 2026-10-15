@@ -158,7 +158,7 @@ export default function EvenementDetailPage() {
     }
   };
 
-  if (loading) return <div className="p-8 text-center text-lg font-semibold text-sky-600">Chargement...</div>;
+  if (loading) return <div className="p-4 sm:p-6 lg:p-8 text-center text-lg font-semibold text-sky-600">Chargement...</div>;
 
   return (
     <div className="p-5 md:p-8 bg-gradient-to-br from-blue-50 via-sky-25 to-blue-100 min-h-screen">
@@ -187,7 +187,7 @@ export default function EvenementDetailPage() {
         </div>
 
         {/* Bandeau résumé de l'évènement */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-4 sm:p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
           <div className="flex-shrink-0 bg-gradient-to-br from-sky-400 to-blue-600 rounded-2xl p-4 shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -350,7 +350,7 @@ export default function EvenementDetailPage() {
             onSubmit={handleSubmit}
           >
             {/* Header - Position fixe */}
-            <div className="bg-gradient-to-r from-blue-400 via-sky-500 to-blue-600 px-8 py-6 relative rounded-t-3xl flex-shrink-0">
+            <div className="bg-gradient-to-r from-blue-400 via-sky-500 to-blue-600 px-4 sm:px-6 lg:px-8 py-6 relative rounded-t-3xl flex-shrink-0">
               <button
                 type="button"
                 onClick={() => setShowForm(false)}
@@ -368,11 +368,11 @@ export default function EvenementDetailPage() {
             </div>
 
             {/* 🔥 Form Content - Avec overflow-y-auto qui fonctionne */}
-            <div className="flex-1 overflow-y-auto p-8 bg-gradient-to-br from-slate-50 to-blue-50/30">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-slate-50 to-blue-50/30">
               <div className="space-y-8">
 
                 {/* Informations générales */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-blue-100">
                   <div className="flex items-center mb-4">
                     <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full mr-3"></div>
                     <h3 className="text-xl font-bold text-blue-800">📝 Informations générales</h3>
@@ -424,7 +424,7 @@ export default function EvenementDetailPage() {
                 </div>
 
                 {/* Statistiques */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-pink-100">
                   <div className="flex items-center mb-4">
                     <div className="w-2 h-8 bg-gradient-to-b from-pink-400 to-pink-500 rounded-full mr-3"></div>
                     <h3 className="text-xl font-bold text-pink-800">📊 Statistiques de participation</h3>
@@ -500,7 +500,7 @@ export default function EvenementDetailPage() {
                 </div>
 
                 {/* Organisation & Ressources */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-blue-100">
                   <div className="flex items-center mb-4">
                     <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full mr-3"></div>
                     <h3 className="text-xl font-bold text-blue-800">🏢 Organisation & Ressources</h3>
@@ -554,7 +554,7 @@ export default function EvenementDetailPage() {
                 {/* Évaluation */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Aspects positifs */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
+                  <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-green-100">
                     <div className="flex items-center mb-4">
                       <div className="w-2 h-8 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full mr-3"></div>
                       <h3 className="text-xl font-bold text-green-800">✅ Aspects positifs</h3>
@@ -570,7 +570,7 @@ export default function EvenementDetailPage() {
                   </div>
 
                   {/* Aspects négatifs */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100">
+                  <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-pink-100">
                     <div className="flex items-center mb-4">
                       <div className="w-2 h-8 bg-gradient-to-b from-pink-400 to-rose-500 rounded-full mr-3"></div>
                       <h3 className="text-xl font-bold text-pink-800">⚠️ Points d&apos;amélioration</h3>
@@ -587,7 +587,7 @@ export default function EvenementDetailPage() {
                 </div>
 
                 {/* Suggestions */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-blue-100">
                   <div className="flex items-center mb-4">
                     <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full mr-3"></div>
                     <h3 className="text-xl font-bold text-indigo-800">💡 Suggestions d&apos;amélioration</h3>
@@ -615,10 +615,10 @@ export default function EvenementDetailPage() {
             </div>
 
             {/* Footer - Position fixe */}
-            <div className="bg-gradient-to-r from-slate-50 to-blue-50 px-8 py-6 border-t border-blue-100 flex-shrink-0 rounded-b-3xl">
+            <div className="bg-gradient-to-r from-slate-50 to-blue-50 px-4 sm:px-6 lg:px-8 py-6 border-t border-blue-100 flex-shrink-0 rounded-b-3xl">
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-8 py-4 rounded-2xl shadow-xl text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300"
+                className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-4 sm:px-6 lg:px-8 py-4 rounded-2xl shadow-xl text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300"
               >
                 💾 Enregistrer les modifications
               </button>

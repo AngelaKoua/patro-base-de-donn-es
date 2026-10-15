@@ -11,7 +11,7 @@ const GuidePage = () => {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full mb-6 shadow-lg">
             <BookOpen className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 bg-clip-text text-transparent mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 bg-clip-text text-transparent mb-4">
             Guide d&apos;utilisation du site Patro
           </h1>
           <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
@@ -27,7 +27,7 @@ const GuidePage = () => {
 
           {/* Gestion des enfants */}
           <div className="bg-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6">
+            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 sm:p-6">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Users className="text-white w-6 h-6" />
@@ -38,7 +38,7 @@ const GuidePage = () => {
                 </div>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <p className="text-gray-700 text-lg mb-4">
                 Cette application web propose deux espaces dédiés à la gestion des enfants :
                 celui du <strong>patro scolaire</strong> et celui du <strong>patro vacances</strong>.
@@ -103,7 +103,7 @@ const GuidePage = () => {
 
           {/* Gestion des animateurs */}
           <div className="bg-white rounded-2xl shadow-xl border border-indigo-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <div className="bg-gradient-to-r from-indigo-600 to-blue-700 p-6">
+            <div className="bg-gradient-to-r from-indigo-600 to-blue-700 p-4 sm:p-6">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Users className="text-white w-6 h-6" />
@@ -114,7 +114,7 @@ const GuidePage = () => {
                 </div>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <p className="text-gray-700 text-lg mb-6">
                 L'application web comporte également deux champs dédiés aux animateurs: un champ pour les animateur du patro scolaire et un second
                 pour les animateurs du patro vacance.
@@ -170,7 +170,7 @@ const GuidePage = () => {
 
           {/* Gestion des directeurs */}
           <div className="bg-white rounded-2xl shadow-xl border border-sky-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <div className="bg-gradient-to-r from-sky-600 to-blue-600 p-6">
+            <div className="bg-gradient-to-r from-sky-600 to-blue-600 p-4 sm:p-6">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Users className="text-white w-6 h-6" />
@@ -181,7 +181,7 @@ const GuidePage = () => {
                 </div>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <p className="text-gray-700 text-lg mb-6">
                 L’application propose également deux sections dédiées aux directeurs : une pour le <strong>patro scolaire</strong> et une autre pour le <strong>patro vacances</strong>.
                 Ces espaces permettent une gestion centralisée, la modification des informations et le suivi détaillé des directeurs.
@@ -239,7 +239,7 @@ const GuidePage = () => {
 
           {/* Gestion des aumôniers */}
           <div className="bg-white rounded-2xl shadow-xl border border-blue-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <div className="bg-gradient-to-r from-blue-700 to-indigo-700 p-6">
+            <div className="bg-gradient-to-r from-blue-700 to-indigo-700 p-4 sm:p-6">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <Users className="text-white w-6 h-6" />
@@ -251,7 +251,7 @@ const GuidePage = () => {
               </div>
             </div>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <p className="text-gray-700 text-lg mb-6">
                 L’application intègre également une section dédiée aux aumôniers, séparée en deux espaces :
                 le <strong>patro scolaire</strong> et le <strong>patro vacances</strong>.
@@ -303,7 +303,7 @@ const GuidePage = () => {
 
           {/* Evenements */}
           <div className="bg-white rounded-2xl shadow-xl border border-orange-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <div className="bg-gradient-to-r from-orange-600 to-red-600 p-6">
+            <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4 sm:p-6">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <CalendarDays className="text-white w-6 h-6" />
@@ -314,7 +314,7 @@ const GuidePage = () => {
                 </div>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <p className="text-gray-700 text-lg mb-6">
                 Plusieurs activités sont organisées tout au long de l'année pour les membres du patro.
                 Ces activités comprennent des activités de loisir ainsi que des activités spirituelles.
@@ -381,7 +381,7 @@ const GuidePage = () => {
 
           {/* Statistiques */}
           <div className="bg-white rounded-2xl shadow-xl border border-purple-100 overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-6">
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-4 sm:p-6">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <BarChart3 className="text-white w-6 h-6" />
@@ -392,7 +392,7 @@ const GuidePage = () => {
                 </div>
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <p className="text-gray-700 text-lg mb-6">
                 Outils d'analyse puissants pour comprendre l'évolution de votre organisation et optimiser vos décisions.
               </p>
@@ -472,7 +472,7 @@ const GuidePage = () => {
 
         {/* Footer avec informations supplémentaires */}
         <div className="mt-12 text-center">
-          <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl p-8 text-white shadow-2xl">
+          <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-2xl p-4 sm:p-6 lg:p-8 text-white shadow-2xl">
             <h3 className="text-2xl font-bold mb-4">🎉 Plus de question ?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Si vous avez des questions ou des incompréhensions concernant cette application web,

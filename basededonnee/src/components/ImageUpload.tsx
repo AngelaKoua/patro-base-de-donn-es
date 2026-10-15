@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '@/lib/api';
+import CameraCaptureButton from './CameraCaptureButton';
 
 interface ImageUploadProps {
     entityId: number;
@@ -73,8 +74,12 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 
     const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
+        e.target.value = '';
         if (!file) return;
+        await uploadFile(file);
+    };
 
+    const uploadFile = async (file: File) => {
         console.log(`📤 Upload photo pour ${entityType} #${entityId}`);
         setUploading(true);
 
@@ -141,7 +146,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     };
 
     return (
-        <div className="flex items-center gap-6 mb-6">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mb-6">
             {/* Photo preview */}
             <div className="w-28 h-28 relative rounded-full overflow-hidden shadow-md border-2 border-sky-200">
                 {currentPhoto ? (
@@ -183,9 +188,9 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-2 w-full sm:w-auto">
                 <label
-                    className={`cursor-pointer bg-sky-400 hover:bg-sky-500 text-white px-4 py-2 rounded-lg shadow-sm transition ${uploading ? 'opacity-50 cursor-not-allowed' : ''
+                    className={`cursor-pointer text-center whitespace-nowrap bg-sky-400 hover:bg-sky-500 text-white px-4 py-2 rounded-lg shadow-sm transition ${uploading ? 'opacity-50 cursor-not-allowed' : ''
                         }`}
                 >
                     <span>{uploading ? 'Téléchargement...' : 'Changer la photo'}</span>
@@ -197,8 +202,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                         disabled={uploading}
                     />
                 </label>
-
-
+                <CameraCaptureButton
+                    onCapture={uploadFile}
+                    disabled={uploading}
+                    className="whitespace-nowrap bg-white border-2 border-sky-400 text-sky-600 hover:bg-sky-50 px-4 py-2 rounded-lg shadow-sm transition disabled:opacity-50 disabled:cursor-not-allowed"
+                />
             </div>
         </div>
     );

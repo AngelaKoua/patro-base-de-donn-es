@@ -177,8 +177,8 @@ export default function DetailVacanceDirecteurPage() {
     }
   };
 
-  if (loading) return <div className="p-8 text-sky-600">Chargement...</div>;
-  if (!directeur) return <div className="p-8 text-red-500">Directeur non trouvé.</div>;
+  if (loading) return <div className="p-4 sm:p-6 lg:p-8 text-sky-600">Chargement...</div>;
+  if (!directeur) return <div className="p-4 sm:p-6 lg:p-8 text-red-500">Directeur non trouvé.</div>;
 
   return (
     <div className="p-5 md:p-8 bg-gradient-to-br from-blue-50 via-sky-25 to-blue-100 min-h-screen">
@@ -206,7 +206,7 @@ export default function DetailVacanceDirecteurPage() {
         </div>
 
         {/* Bandeau profil compact */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-4 sm:p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
           <ImageUpload
             entityId={directeur.id}
             entityType="vacance_directeur"
@@ -252,7 +252,7 @@ export default function DetailVacanceDirecteurPage() {
       {showRealModal && (
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border-2 border-sky-100 animate-fadeIn">
-            <div className="sticky top-0 bg-gradient-to-r from-sky-600 to-blue-700 p-8 rounded-t-3xl flex justify-between items-center shadow-md">
+            <div className="sticky top-0 bg-gradient-to-r from-sky-600 to-blue-700 p-4 sm:p-6 lg:p-8 rounded-t-3xl flex justify-between items-center shadow-md">
               <div className="flex items-center gap-4">
                 <div className="bg-white/20 rounded-full p-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -274,7 +274,7 @@ export default function DetailVacanceDirecteurPage() {
               </button>
             </div>
 
-            <form onSubmit={handleRealisationSubmit} className="p-8 space-y-8">
+            <form onSubmit={handleRealisationSubmit} className="p-4 sm:p-6 lg:p-8 space-y-8">
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-blue-700 flex items-center gap-2 mb-2">
                   <span className="w-2 h-2 bg-blue-500 rounded-full"></span> Contact
@@ -301,7 +301,7 @@ export default function DetailVacanceDirecteurPage() {
                 </button>
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-8 py-2 rounded-lg font-bold shadow hover:from-sky-600 hover:to-blue-700 transition-all"
+                  className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-4 sm:px-6 lg:px-8 py-2 rounded-lg font-bold shadow hover:from-sky-600 hover:to-blue-700 transition-all"
                 >
                   Enregistrer
                 </button>

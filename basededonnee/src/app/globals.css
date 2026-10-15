@@ -1,10 +1,15 @@
 @import "tailwindcss";
-@plugin "daisyui";
+/* L'application est conçue en clair : on n'active pas le thème sombre automatique de daisyUI
+   (sinon le texte devient clair sur les fonds blancs des pages quand le téléphone est en mode sombre). */
+@plugin "daisyui" {
+  themes: light --default;
+}
 
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -14,15 +19,19 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Les photos et vidéos ne dépassent jamais de leur conteneur
+   (pas les icônes svg : dans un bouton dimensionné par son contenu, elles seraient écrasées) */
+img,
+video {
+  max-width: 100%;
 }

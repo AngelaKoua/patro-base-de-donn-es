@@ -127,7 +127,7 @@ export default function ConnexionPage() {
                             }}
                         ></div>
                         
-                        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white p-8">
+                        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-white p-4 sm:p-6 lg:p-8">
                             <div className="text-center space-y-6 max-w-md">
                                 <div className="w-20 h-20 mx-auto bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30">
                                     <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

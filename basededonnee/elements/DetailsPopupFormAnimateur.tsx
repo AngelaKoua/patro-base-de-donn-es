@@ -136,7 +136,7 @@ const DetailsPopupFormAnimateur: React.FC<DetailsPopupFormAnimateurProps> = ({
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-2 border-sky-100 animate-fadeIn">
         {/* Header modernisé */}
-        <div className="sticky top-0 bg-gradient-to-r from-sky-600 to-blue-700 p-8 rounded-t-3xl flex justify-between items-center shadow-md">
+        <div className="sticky top-0 bg-gradient-to-r from-sky-600 to-blue-700 p-4 sm:p-6 lg:p-8 rounded-t-3xl flex justify-between items-center shadow-md">
           <div className="flex items-center gap-4">
             <div className="bg-white/20 rounded-full p-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -155,7 +155,7 @@ const DetailsPopupFormAnimateur: React.FC<DetailsPopupFormAnimateurProps> = ({
             </svg>
           </button>
         </div>
-        <form className="p-8 space-y-8" onSubmit={handleSubmit}>
+        <form className="p-4 sm:p-6 lg:p-8 space-y-8" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Contact */}
             <div className="space-y-4">
@@ -218,7 +218,7 @@ const DetailsPopupFormAnimateur: React.FC<DetailsPopupFormAnimateurProps> = ({
 
           <div className="flex justify-end mt-8 gap-4">
             <button type="button" onClick={onClose} className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg font-semibold shadow hover:bg-gray-300 transition-all">Annuler</button>
-            <button type="submit" className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-8 py-2 rounded-lg font-bold shadow hover:from-sky-600 hover:to-blue-700 transition-all">Enregistrer</button>
+            <button type="submit" className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-4 sm:px-6 lg:px-8 py-2 rounded-lg font-bold shadow hover:from-sky-600 hover:to-blue-700 transition-all">Enregistrer</button>
           </div>
         </form>
       </div>

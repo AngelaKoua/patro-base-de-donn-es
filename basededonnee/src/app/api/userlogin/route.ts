@@ -1,14 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
 import { supabase } from '@/lib/supabase';
+import { authCookieOptions, getJwtSecret, signerToken, verifierMotDePasse } from '@/lib/auth';
 
 export async function POST(request: NextRequest) {
   try {
-    const JWT_SECRET = process.env.JWT_SECRET;
-    if (!JWT_SECRET) {
-      throw new Error('JWT_SECRET non configuré');
-    }
+    getJwtSecret();
 
     const body = await request.json();
     const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
@@ -26,26 +22,13 @@ export async function POST(request: NextRequest) {
 
     if (userError) throw userError;
 
-    // Seuls les comptes ayant un mot de passe haché (bcrypt) dans Supabase peuvent se connecter.
-    // Les hachages créés depuis le SQL Editor (pgcrypto) sont vérifiés par Postgres lui-même.
-    let isValid = false;
-    if (user?.mot_de_passe?.startsWith('$2')) {
-      isValid = await bcrypt.compare(mot_de_passe, user.mot_de_passe);
-      if (!isValid) {
-        const { data: pgValid, error: rpcError } = await supabase.rpc('verifier_mot_de_passe', {
-          p_email: email,
-          p_mot_de_passe: mot_de_passe,
-        });
-        if (rpcError) throw rpcError;
-        isValid = pgValid === true;
-      }
-    }
+    const isValid = await verifierMotDePasse(email, mot_de_passe, user?.mot_de_passe);
 
     if (!user || !isValid) {
       return NextResponse.json({ Error: true, Message: 'Email ou mot de passe incorrect' }, { status: 401 });
     }
 
-    const token = jwt.sign({ id: user.id, email }, JWT_SECRET, { expiresIn: '1h' });
+    const token = signerToken(user.id, email);
 
     await supabase.from('access_token').delete().eq('user_id', user.id);
     await supabase.from('access_token').insert([{
@@ -62,12 +45,7 @@ export async function POST(request: NextRequest) {
       token,
     });
 
-    response.cookies.set('authToken', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'lax',
-      maxAge: 3600,
-    });
+    response.cookies.set('authToken', token, authCookieOptions);
 
     return response;
   } catch (err: unknown) {

@@ -265,7 +265,7 @@ const router = useRouter();
 
       {/* Titre */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent mb-2">
+        <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent mb-2">
           Tableau de Bord
         </h1>
         <p className="text-xl text-sky-600 font-semibold">Statistiques vacances</p>
@@ -279,7 +279,7 @@ const router = useRouter();
       )}
 
       {/* Section de sélection d'année */}
-      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 mb-8 border border-sky-100">
+      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 mb-8 border border-sky-100">
         <h3 className="text-sm font-bold text-sky-700 mb-4 flex items-center gap-2 pb-2 border-b border-sky-100 uppercase tracking-wide">
           <div className="w-1.5 h-1.5 bg-sky-500 rounded-full"></div>
           Année
@@ -298,7 +298,7 @@ const router = useRouter();
       {/* Graphiques en camembert */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
         {/* Primaire */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-sky-100 hover:shadow-2xl transition-shadow duration-300">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 border border-sky-100 hover:shadow-2xl transition-shadow duration-300">
           <h3 className="text-sm font-bold text-sky-700 mb-4 flex items-center gap-2 pb-2 border-b border-sky-100 uppercase tracking-wide">
             <div className="w-1.5 h-1.5 bg-sky-500 rounded-full"></div>
             Répartition des classes - Primaire
@@ -315,7 +315,7 @@ const router = useRouter();
         </div>
 
         {/* Secondaire */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-sky-100 hover:shadow-2xl transition-shadow duration-300">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 border border-sky-100 hover:shadow-2xl transition-shadow duration-300">
           <h3 className="text-sm font-bold text-sky-700 mb-4 flex items-center gap-2 pb-2 border-b border-sky-100 uppercase tracking-wide">
             <div className="w-1.5 h-1.5 bg-sky-500 rounded-full"></div>
             Répartition des classes - Secondaire
@@ -332,7 +332,7 @@ const router = useRouter();
         </div>
 
         {/* Par sexe */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-sky-100 hover:shadow-2xl transition-shadow duration-300">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 border border-sky-100 hover:shadow-2xl transition-shadow duration-300">
           <h3 className="text-sm font-bold text-sky-700 mb-4 flex items-center gap-2 pb-2 border-b border-sky-100 uppercase tracking-wide">
             <div className="w-1.5 h-1.5 bg-sky-500 rounded-full"></div>
             Répartition par sexe
@@ -359,7 +359,7 @@ const router = useRouter();
       </div>
 
       {/* Évolution des effectifs */}
-      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 mb-8 border border-sky-100">
+      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 mb-8 border border-sky-100">
         <h3 className="text-sm font-bold text-sky-700 mb-6 flex items-center gap-2 pb-2 border-b border-sky-100 uppercase tracking-wide">
           <div className="w-1.5 h-1.5 bg-sky-500 rounded-full"></div>
           Évolution des effectifs
@@ -466,7 +466,7 @@ const router = useRouter();
       </div>
 
       {/* Évolution du taux de présence */}
-      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 mb-8 border border-sky-100">
+      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 mb-8 border border-sky-100">
         <h3 className="text-sm font-bold text-sky-700 mb-6 flex items-center gap-2 pb-2 border-b border-sky-100 uppercase tracking-wide">
           <div className="w-1.5 h-1.5 bg-sky-500 rounded-full"></div>
           Évolution du taux global de présence
@@ -561,7 +561,7 @@ const router = useRouter();
       </div>
 
       {/* Taux de présence par section */}
-      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-sky-100">
+      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 border border-sky-100">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6 border-b border-sky-100 pb-3">
           <h3 className="text-sm font-bold text-sky-700 flex items-center gap-2 uppercase tracking-wide">
             <div className="w-1.5 h-1.5 bg-sky-500 rounded-full"></div>

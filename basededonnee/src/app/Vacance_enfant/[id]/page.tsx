@@ -199,7 +199,7 @@ export default function DetailVacanceEnfantPage() {
     }
   };
 
-  if (loading) return <div className="p-8 text-center text-lg font-semibold">Chargement...</div>;
+  if (loading) return <div className="p-4 sm:p-6 lg:p-8 text-center text-lg font-semibold">Chargement...</div>;
 
   return (
     <div className="p-5 md:p-8 bg-gradient-to-br from-blue-50 via-sky-25 to-blue-100 min-h-screen">
@@ -228,7 +228,7 @@ export default function DetailVacanceEnfantPage() {
         </div>
 
         {/* Bandeau profil compact */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-4 sm:p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
           {student && (
             <ImageUpload
               entityId={student.id}

@@ -207,7 +207,7 @@ const VacanceEvenementPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-sky-100">
-      <div className="p-8">
+      <div className="p-4 sm:p-6 lg:p-8">
         {/* Header Section */}
         <div className="flex justify-between items-center mb-8">
           <button
@@ -223,7 +223,7 @@ const VacanceEvenementPage = () => {
 
         {/* Title */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent mb-2">
+          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent mb-2">
             Tableau de Bord
           </h1>
           <p className="text-xl text-sky-600 font-semibold">Évènements vacances</p>
@@ -231,7 +231,7 @@ const VacanceEvenementPage = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row flex-wrap justify-between items-stretch sm:items-center gap-3 sm:gap-4 mb-8">
           <button
             onClick={() => setShowFilter(!showFilter)}
             className="bg-sky-500 text-white hover:bg-sky-600 px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 font-medium"
@@ -263,7 +263,7 @@ const VacanceEvenementPage = () => {
 
         {/* Filter Section */}
         {showFilter && (
-          <div className="mb-8 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-sky-100">
+          <div className="mb-8 p-4 sm:p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-sky-100">
             <h3 className="text-xl font-bold text-sky-700 mb-6 flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z" />
@@ -348,7 +348,7 @@ const VacanceEvenementPage = () => {
         {showForm && (
           <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50 p-4">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
-              <div className="sticky top-0 bg-gradient-to-r from-sky-500 to-blue-600 p-6 rounded-t-2xl">
+              <div className="sticky top-0 bg-gradient-to-r from-sky-500 to-blue-600 p-4 sm:p-6 rounded-t-2xl">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white flex items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -367,7 +367,7 @@ const VacanceEvenementPage = () => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="p-6 space-y-6">
+              <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-sky-700 mb-2">Année</label>
@@ -447,10 +447,10 @@ const VacanceEvenementPage = () => {
         )}
 
         {/* Export Excel Button */}
-        <div className="flex justify-end mb-4">
+        <div className="flex flex-col sm:flex-row sm:justify-end mb-4">
           <button
             onClick={handleExportExcel}
-            className="bg-green-600 text-white hover:bg-green-700 px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-medium flex items-center gap-2"
+            className="bg-green-600 text-white hover:bg-green-700 px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 font-medium flex items-center justify-center gap-2"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -465,19 +465,19 @@ const VacanceEvenementPage = () => {
             <table className="w-full">
               <thead>
                 <tr className="bg-gradient-to-r from-sky-400 to-blue-400 text-white">
-                  <th className="px-6 py-4 text-left font-bold">Année</th>
-                  <th className="px-6 py-4 text-left font-bold">Évènement</th>
-                  <th className="px-6 py-4 text-left font-bold">Date de début</th>
-                  <th className="px-6 py-4 text-left font-bold">Date de fin</th>
-                  <th className="px-6 py-4 text-left font-bold">Cible</th>
-                  <th className="px-6 py-4 text-left font-bold">Actions</th>
+                  <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Année</th>
+                  <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Évènement</th>
+                  <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Date de début</th>
+                  <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Date de fin</th>
+                  <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Cible</th>
+                  <th className="whitespace-nowrap px-6 py-4 text-left font-bold">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredEvenements.length === 0 ? (
                   <tr>
                     <td colSpan={6} className="px-6 py-12 text-center text-gray-500 bg-sky-50/50">
-                      <div className="flex flex-col items-center gap-4">
+                      <div className="flex flex-col items-center gap-4 sticky left-6 max-w-[calc(100vw-6rem)] sm:static sm:max-w-none">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-sky-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4h3a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9a2 2 0 012-2h3z" />
                         </svg>
@@ -491,16 +491,16 @@ const VacanceEvenementPage = () => {
                 ) : (
                   filteredEvenements.map((ev) => (
                     <tr key={ev.id} className="hover:bg-sky-50/50 transition-colors duration-200 border-b border-sky-100">
-                      <td className="px-6 py-4 text-sky-700 font-medium">{ev.annee}</td>
-                      <td className="px-6 py-4 text-gray-800 font-semibold">{ev.evenement}</td>
-                      <td className="px-6 py-4 text-gray-600">{ev.date_debut}</td>
-                      <td className="px-6 py-4 text-gray-600">{ev.date_fin}</td>
-                      <td className="px-6 py-4">
+                      <td className="whitespace-nowrap px-6 py-4 text-sky-700 font-medium">{ev.annee}</td>
+                      <td className="whitespace-nowrap px-6 py-4 text-gray-800 font-semibold">{ev.evenement}</td>
+                      <td className="whitespace-nowrap px-6 py-4 text-gray-600">{ev.date_debut}</td>
+                      <td className="whitespace-nowrap px-6 py-4 text-gray-600">{ev.date_fin}</td>
+                      <td className="whitespace-nowrap px-6 py-4">
                         <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
                           {ev.cible}
                         </span>
                       </td>
-                      <td className="px-6 py-4">
+                      <td className="whitespace-nowrap px-6 py-4">
                         <div className="flex space-x-2">
                           <button
                             onClick={() => handleEdit(ev)}

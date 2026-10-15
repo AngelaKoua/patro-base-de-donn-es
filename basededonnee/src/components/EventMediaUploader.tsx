@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import axios from 'axios';
 import { API_URL } from '@/lib/api';
+import CameraCaptureButton from './CameraCaptureButton';
 
 interface EventMediaUploaderProps {
     evenementId: string | number;
@@ -113,7 +114,7 @@ export default function EventMediaUploader({
     return (
         <div className="space-y-8">
             {/* Photos */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-blue-100">
                 <div className="flex items-center mb-4">
                     <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full mr-3"></div>
                     <h3 className="text-xl font-bold text-blue-800">📸 Photos (max 10)</h3>
@@ -163,6 +164,11 @@ export default function EventMediaUploader({
                                         disabled={uploadingPhoto === idx}
                                     />
                                 </label>
+                                <CameraCaptureButton
+                                    onCapture={file => handlePhotoUpload(idx, file)}
+                                    disabled={uploadingPhoto === idx}
+                                    className="mt-2 w-full py-1.5 px-3 rounded-full text-xs font-medium bg-white border border-blue-200 text-blue-700 hover:bg-blue-50 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                                />
                             </div>
                         );
                     })}
@@ -170,7 +176,7 @@ export default function EventMediaUploader({
             </div>
 
             {/* Vidéo */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-pink-100">
                 <div className="flex items-center mb-4">
                     <div className="w-2 h-8 bg-gradient-to-b from-pink-500 to-rose-500 rounded-full mr-3"></div>
                     <h3 className="text-xl font-bold text-pink-800">🎥 Vidéo (max 200 Mo)</h3>

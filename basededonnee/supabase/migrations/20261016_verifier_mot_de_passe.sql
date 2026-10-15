@@ -20,3 +20,4 @@ $$;
 
 revoke execute on function public.verifier_mot_de_passe(text, text) from public, anon, authenticated;
 grant execute on function public.verifier_mot_de_passe(text, text) to service_role;
+

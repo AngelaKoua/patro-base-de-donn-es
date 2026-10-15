@@ -158,17 +158,17 @@ export default function DetailVacanceAnimateurPage() {
     }
   };
 
-  if (loading) return <div className="p-8 text-sky-600">Chargement...</div>;
+  if (loading) return <div className="p-4 sm:p-6 lg:p-8 text-sky-600">Chargement...</div>;
   if (fetchError) {
     return (
-      <div className="p-8 text-red-600 bg-red-50 border border-red-200 rounded-xl m-8">
+      <div className="p-4 sm:p-6 lg:p-8 text-red-600 bg-red-50 border border-red-200 rounded-xl m-8">
         <strong>Erreur :</strong> {fetchError}
       </div>
     );
   }
   if (!animateur) {
     return (
-      <div className="p-8 text-gray-600 bg-gray-50 border border-gray-200 rounded-xl m-8">
+      <div className="p-4 sm:p-6 lg:p-8 text-gray-600 bg-gray-50 border border-gray-200 rounded-xl m-8">
         Aucun animateur trouvé pour cet ID.
       </div>
     );
@@ -200,7 +200,7 @@ export default function DetailVacanceAnimateurPage() {
         </div>
 
         {/* Bandeau profil compact */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-4 sm:p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
           <ImageUpload
             entityId={animateur.id}
             entityType="vacance_animateur"

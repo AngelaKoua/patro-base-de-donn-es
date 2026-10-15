@@ -12,7 +12,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   return (
     <>
       {!isLoginPage && <My_navbar />}
-      <div className={isLoginPage ? '' : 'pt-20'}>{children}</div>
+      <div className={isLoginPage ? '' : 'pt-16 overflow-x-clip'}>{children}</div>
       {!isLoginPage && <Chatbot />}
     </>
   );

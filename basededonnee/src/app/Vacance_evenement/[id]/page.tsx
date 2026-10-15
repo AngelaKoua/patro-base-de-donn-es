@@ -193,7 +193,7 @@ export default function VacanceEvenementDetailPage() {
   };
 
   if (loading) {
-    return <div className="p-8 text-center text-lg font-semibold">Chargement...</div>;
+    return <div className="p-4 sm:p-6 lg:p-8 text-center text-lg font-semibold">Chargement...</div>;
   }
 
   return (
@@ -223,7 +223,7 @@ export default function VacanceEvenementDetailPage() {
         </div>
 
         {/* Bandeau résumé de l'évènement */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-4 sm:p-6 border border-sky-100 mb-6 flex flex-col sm:flex-row items-center sm:items-center gap-6">
           <div className="shrink-0 bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl p-4 shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -319,7 +319,7 @@ export default function VacanceEvenementDetailPage() {
         <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-blue-900/50 to-slate-900/60 backdrop-blur-md z-50 p-4">
           <form className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl w-full max-w-5xl relative border border-blue-200/50 max-h-[90vh] flex flex-col overflow-hidden" onSubmit={handleSubmit}>
             {/* Header */}
-            <div className="bg-gradient-to-r from-blue-400 via-sky-500 to-blue-600 px-8 py-6 relative rounded-t-3xl">
+            <div className="bg-gradient-to-r from-blue-400 via-sky-500 to-blue-600 px-4 sm:px-6 lg:px-8 py-6 relative rounded-t-3xl">
               <button type="button" onClick={() => setShowForm(false)} className="absolute top-4 right-4 text-white/90 hover:text-white hover:bg-white/20 rounded-full p-2 transition-all duration-200 hover:scale-110" aria-label="Fermer">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -329,9 +329,9 @@ export default function VacanceEvenementDetailPage() {
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-300 via-white/50 to-green-300"></div>
             </div>
             {/* Form Content */}
-            <div className="flex-1 overflow-y-auto p-8 bg-gradient-to-br from-blue-25 to-sky-50">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-blue-25 to-sky-50">
               {/* Informations générales */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100 mb-6">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-blue-100 mb-6">
                 <div className="flex items-center mb-4">
                   <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full mr-3"></div>
                   <h3 className="text-xl font-bold text-blue-800">📝 Informations générales</h3>
@@ -361,7 +361,7 @@ export default function VacanceEvenementDetailPage() {
                 </div>
               </div>
               {/* Statistiques */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100 mb-6">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-pink-100 mb-6">
                 <div className="flex items-center mb-4">
                   <div className="w-2 h-8 bg-gradient-to-b from-pink-400 to-pink-500 rounded-full mr-3"></div>
                   <h3 className="text-xl font-bold text-pink-800">📊 Statistiques de participation</h3>
@@ -395,7 +395,7 @@ export default function VacanceEvenementDetailPage() {
                 </div>
               </div>
               {/* Organisation & Ressources */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100 mb-6">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-blue-100 mb-6">
                 <div className="flex items-center mb-4">
                   <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full mr-3"></div>
                   <h3 className="text-xl font-bold text-blue-800">Organisation & Ressources</h3>
@@ -427,7 +427,7 @@ export default function VacanceEvenementDetailPage() {
               {/* Évaluation */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Aspects positifs */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-green-100">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-green-100">
                   <div className="flex items-center mb-4">
                     <div className="w-2 h-8 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full mr-3"></div>
                     <h3 className="text-xl font-bold text-green-800">✅ Aspects positifs</h3>
@@ -435,7 +435,7 @@ export default function VacanceEvenementDetailPage() {
                   <textarea name="aspects_positifs" value={detail.aspects_positifs} onChange={handleChange} placeholder="Qu'est-ce qui a bien fonctionné ?" className="w-full border-2 border-green-200 focus:border-green-400 focus:ring-4 focus:ring-green-100 rounded-xl p-4 transition-all duration-200 resize-none bg-white hover:border-green-300" rows={4} />
                 </div>
                 {/* Aspects négatifs */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-pink-100">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-pink-100">
                   <div className="flex items-center mb-4">
                     <div className="w-2 h-8 bg-gradient-to-b from-pink-400 to-rose-500 rounded-full mr-3"></div>
                     <h3 className="text-xl font-bold text-pink-800">⚠️ Points d&#39;amélioration</h3>
@@ -444,7 +444,7 @@ export default function VacanceEvenementDetailPage() {
                 </div>
               </div>
               {/* Suggestions */}
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-blue-100 mb-6">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-blue-100 mb-6">
                 <div className="flex items-center mb-4">
                   <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full mr-3"></div>
                   <h3 className="text-xl font-bold text-indigo-800">💡 Suggestions d&#39;amélioration</h3>
@@ -462,8 +462,8 @@ export default function VacanceEvenementDetailPage() {
               />
             </div>
             {/* Footer avec bouton */}
-            <div className="bg-gradient-to-r from-slate-50 to-blue-50 px-8 py-6 border-t border-blue-100">
-              <button type="submit" className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-8 py-4 rounded-2xl shadow-xl text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300">
+            <div className="bg-gradient-to-r from-slate-50 to-blue-50 px-4 sm:px-6 lg:px-8 py-6 border-t border-blue-100">
+              <button type="submit" className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-4 sm:px-6 lg:px-8 py-4 rounded-2xl shadow-xl text-lg font-bold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-300">
                 💾 Enregistrer les modifications
               </button>
             </div>

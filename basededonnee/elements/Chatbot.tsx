@@ -113,7 +113,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
       {isOpen && (
         <div className="mb-4 w-[92vw] max-w-sm h-[520px] max-h-[75vh] bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-sky-100 flex flex-col overflow-hidden">
           <div className="bg-gradient-to-r from-sky-500 to-blue-600 px-4 py-3 flex items-center justify-between shrink-0">
