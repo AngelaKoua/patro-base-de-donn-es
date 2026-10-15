@@ -27,10 +27,19 @@ export async function POST(request: NextRequest) {
     if (userError) throw userError;
 
     // Seuls les comptes ayant un mot de passe haché (bcrypt) dans Supabase peuvent se connecter.
-    const isValid =
-      !!user?.mot_de_passe &&
-      user.mot_de_passe.startsWith('$2') &&
-      (await bcrypt.compare(mot_de_passe, user.mot_de_passe));
+    // Les hachages créés depuis le SQL Editor (pgcrypto) sont vérifiés par Postgres lui-même.
+    let isValid = false;
+    if (user?.mot_de_passe?.startsWith('$2')) {
+      isValid = await bcrypt.compare(mot_de_passe, user.mot_de_passe);
+      if (!isValid) {
+        const { data: pgValid, error: rpcError } = await supabase.rpc('verifier_mot_de_passe', {
+          p_email: email,
+          p_mot_de_passe: mot_de_passe,
+        });
+        if (rpcError) throw rpcError;
+        isValid = pgValid === true;
+      }
+    }
 
     if (!user || !isValid) {
       return NextResponse.json({ Error: true, Message: 'Email ou mot de passe incorrect' }, { status: 401 });
