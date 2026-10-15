@@ -1,43 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 import { supabase } from '@/lib/supabase';
-
-const JWT_SECRET = process.env.JWT_SECRET || 'patro-secret-key-2025';
-
-const allowedUsers = [
-  { email: 'kouaangela606@gmail.com', mot_de_passe: 'admin123' },
-  { email: 'patrorsvbouake@gmail.com', mot_de_passe: 'patrorsv2025@' },
-  { email: 'dialloba@gmail.com', mot_de_passe: 'diallo1123@' },
-];
 
 export async function POST(request: NextRequest) {
   try {
+    const JWT_SECRET = process.env.JWT_SECRET;
+    if (!JWT_SECRET) {
+      throw new Error('JWT_SECRET non configuré');
+    }
+
     const body = await request.json();
-    const { email, mot_de_passe } = body;
+    const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
+    const { mot_de_passe } = body;
 
     if (!email || !mot_de_passe) {
       return NextResponse.json({ Error: true, Message: 'Email et mot de passe requis' }, { status: 400 });
     }
 
-    const allowedUser = allowedUsers.find((u) => u.email === email);
-    if (!allowedUser) {
-      return NextResponse.json({ Error: true, Message: 'Adresse email non autorisée' }, { status: 403 });
-    }
-
-    if (allowedUser.mot_de_passe !== mot_de_passe) {
-      return NextResponse.json({ Error: true, Message: 'Mot de passe incorrect' }, { status: 401 });
-    }
-
     const { data: user, error: userError } = await supabase
       .from('utilisateurs')
-      .select('id, email, mot_de_passe, nom, prenom')
+      .select('id, email, mot_de_passe')
       .eq('email', email)
       .maybeSingle();
 
     if (userError) throw userError;
 
-    if (!user) {
-      return NextResponse.json({ Error: true, Message: 'Utilisateur non trouvé dans la base de données' }, { status: 404 });
+    // Seuls les comptes ayant un mot de passe haché (bcrypt) dans Supabase peuvent se connecter.
+    const isValid =
+      !!user?.mot_de_passe &&
+      user.mot_de_passe.startsWith('$2') &&
+      (await bcrypt.compare(mot_de_passe, user.mot_de_passe));
+
+    if (!user || !isValid) {
+      return NextResponse.json({ Error: true, Message: 'Email ou mot de passe incorrect' }, { status: 401 });
     }
 
     const token = jwt.sign({ id: user.id, email }, JWT_SECRET, { expiresIn: '1h' });
